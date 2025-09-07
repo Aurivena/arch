@@ -1,4 +1,4 @@
-```json
+```text
 internal/
   application/        // use-cases + ports (интерфейсы)
     ports/            // контракты для хранилищ/сервисов
@@ -33,7 +33,7 @@ pkg/                  // технические утилиты
 
 #### Направление зависимостей
 
-```json
+```text
 delivery  →  application(ports,usecases)  →  domain
 ↑
 infrastructure (implements ports)
@@ -65,7 +65,7 @@ pkg/ — карантин утилит
 
 #### Инициализация
 
-```json
+```text
 Считываешь конфиг → поднимаешь соединения → создаёшь реализации портов → собираешь UC → вешаешь на роуты.
 ```
 
