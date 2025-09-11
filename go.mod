@@ -3,6 +3,7 @@ module arch
 go 1.24
 
 require (
+	github.com/Aurivena/spond/v2 v2.0.13
 	github.com/gin-contrib/cors v1.7.6
 	github.com/gin-gonic/gin v1.10.1
 	github.com/jackc/pgx/v5 v5.7.5

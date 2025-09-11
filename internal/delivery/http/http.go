@@ -2,23 +2,26 @@ package http
 
 import (
 	"arch/internal/application"
+	"arch/internal/delivery/http/ai"
 	"arch/internal/delivery/middleware"
 	"arch/internal/domain/entity"
 	"arch/internal/server"
-	"fmt"
 	"strings"
 	"time"
 
+	"github.com/Aurivena/spond/v2/core"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 type Http struct {
+	Ai         *ai.Handler
 	Middleware *middleware.Middleware
 }
 
-func NewHttp(application *application.Application, middleware *middleware.Middleware) *Http {
+func NewHttp(application *application.Application, spond *core.Spond, middleware *middleware.Middleware) *Http {
 	return &Http{
+		Ai:         ai.New(application, spond),
 		Middleware: middleware,
 	}
 }
@@ -39,7 +42,10 @@ func (h *Http) InitHTTPHttps(config *entity.ServerConfig) *gin.Engine {
 	api := gHttp.Group("/api")
 	{
 
-		fmt.Println(api)
+		group := api.Group("/group")
+		{
+			group.POST("", h.Ai.Send)
+		}
 
 	}
 

@@ -3,7 +3,7 @@ package entity
 type ConfigService struct {
 	Server       ServerConfig       `json:"server" binding:"required"`
 	BusinessDB   BusinessDBConfig   `json:"business-database" binding:"required"`
-	Minio        MinioConfig        `json:"minio" binding:"required"`
+	QwQ          AiConfig           `json:"ai" binding:"required"`
 	Certificates CertificatesConfig `json:"certificates" binding:"required"`
 }
 
@@ -27,10 +27,8 @@ type BusinessDBConfig struct {
 	SSLMode  string `json:"db_ssl_mode" binding:"required"`
 }
 
-type MinioConfig struct {
-	Endpoint        string `json:"endpoint" binding:"required"`
-	User            string `json:"minio_root_user" binding:"required"`
-	Password        string `json:"minio_root_password" binding:"required"`
-	SSL             bool   `json:"minio_use_ssl"  binding:"required"`
-	MinioBucketName string `json:"minio_bucket_name" binding:"required"`
+type AiConfig struct {
+	ApiKey string `json:"qwq_api_key" binding:"required"`
+	Url    string `json:"qwq_url" binding:"required"`
+	Model  string `json:"qwq_model" binding:"required"`
 }
