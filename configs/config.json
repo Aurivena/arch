@@ -11,10 +11,5 @@
     "db_username":"answer_postgres_user",
     "db_name":"answer_postgres_database",
     "db_ssl_mode": "disable"
-  },
-  "ai": {
-    "qwq_api_key": "",
-    "qwq_url": "",
-    "qwq_model": ""
   }
 }
