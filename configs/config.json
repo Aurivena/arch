@@ -13,8 +13,8 @@
     "db_ssl_mode": "disable"
   },
   "ai": {
-    "qwq_api_key": "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",
-    "qwq_url": "https://openrouter.ai/api/v1",
-    "qwq_model": "arliai/qwq-32b-arliai-rpr-v1:free"
+    "qwq_api_key": "",
+    "qwq_url": "",
+    "qwq_model": ""
   }
 }
