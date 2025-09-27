@@ -35,7 +35,7 @@ pkg/                  // технические утилиты
 
 ```text
 delivery  →  application(ports,usecases)  →  domain
-↑
+                          ↑
 infrastructure (implements ports)
 ```
 
